@@ -1,0 +1,130 @@
+<html>
+
+    	<link rel="stylesheet" href="css/bootstrap.min.css" >
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="theme-color" content="black" >
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"  >
+<style>
+body {
+background:url("IMG/BG.jpeg");
+background-size:cover;
+background-position:center;
+width:100vw;
+height:100vh;
+position:fixed;
+}
+*{
+margin:0;
+padding:0;
+}
+
+
+
+#mayos_game 
+{
+color:white;
+z-index:1;
+position:fixed;
+
+}
+.mayos_game_parent    {
+height:100vh;
+display:flex;
+color:white;
+justify-content:center;
+align-items:center;
+}
+.mayos_game_child {
+height:96vh;
+width:100vw;
+background:#bf00c2;
+overflow-y:scroll;
+}
+.mayos_game_close_btn  {
+font-style:bold;
+width:45px;
+height:45px;
+position:fixed;
+color:white;
+background:red;
+font-size:36px;
+outline:none;
+border:none;
+}
+
+.select {
+background:rgba(0,0,0,.6);
+width:110px;
+height:34px;
+position:sticky;
+border-radius:10px;
+margin-left:50px;
+}
+h3{
+font-weight:900;
+margin-left:10px;
+}
+#note {
+margin-top:48px;
+font-weight:900;
+margin-left:10px;
+}
+</style>
+<body>
+<div id="mayos_game" >
+<div class="mayos_game_parent" >
+<div class="mayos_game_child" >
+<div>
+<button class="mayos_game_close_btn" onclick="closepopup_games()" >
+<b>
+X</b>
+</button>
+</div>
+<p id="note" class=""  >*Please note That these game needs INTERNET Connection </p>
+<h3>MAYOS GAME</h3>
+<div class="select" style="display: flex; top:6px; z-index:3;"  >
+<div class="desk col-2" onclick="switch_desktop()" style="font-size:26px; padding-top:4px; color: white;"  ><h1 class="fa fa-desktop" id="desktop"  style="text-shadow: 0 0 8px red, 0 0 8px red, 0 0 10px red, 0 0 8px red; " aria-hidden="true"></h1></div>
+<div class="desk col-2" onclick="switch_mobile()" style="font-size:32px; margin-left:30px; "  ><i class="fa fa-mobile" id="mobile"  aria-hidden="true"></i></div>
+</div>
+<div id="desk_game" >
+<center>
+<a href="https://play.famobi.com/high-hills" ><img src="games/g1.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+<a href="https://play.famobi.com/moto-x3m" ><img src="games/g2.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+<a href="https://play.famobi.com/thug-racer" ><img src="games/g3.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+<a href="https://play.famobi.com/adventure-drivers" ><img src="games/g4.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+<a href="http://hexgl.bkcore.com/play/" ><img src="games/g5.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+</center>
+</div>
+
+
+<div id="mobile_game" style="display:none;" >
+<center>
+<a href="https://play.famobi.com/high-hills" ><img src="games/g1.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+<a href="https://play.famobi.com/moto-x3m" ><img src="games/g2.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+<a href="https://play.famobi.com/adventure-drivers" ><img src="games/g4.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+<a href="http://hexgl.bkcore.com/play/" ><img src="games/g5.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+</center>
+</div>
+</div>
+</div>
+</body>
+<script src="js/calce.js"></script>
+<script>
+function switch_mobile(){
+ document.getElementById("desktop").style.textShadow="none";
+ document.getElementById("mobile").style.textShadow="0 0 8px red, 0 0 8px red, 0 0 10px red, 0 0 8px red";
+ document.getElementById("mobile_game").style.display="block";
+  document.getElementById("desk_game").style.display="none";
+}
+function switch_desktop(){
+	document.getElementById("mobile").style.textShadow="none";
+	document.getElementById("desktop").style.textShadow="0 0 8px red, 0 0 8px red, 0 0 10px red, 0 0 8px red";
+	document.getElementById("desk_game").style.display="block";
+	document.getElementById("mobile_game").style.display="none";
+}
+function closepopup_games(){
+	document.getElementById("mayos_game").style.display="none";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<html>
+<head>
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="theme-color" content="black" >
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"  >
+<!--link area-->
+<!--gamelink-->
+           <link rel="stylesheet" href="style/calce.css">
+               <link rel="stylesheet" href="style/ui.css">
+               	<link rel="stylesheet" href="css/bootstrap.min.css" >
+<title>
+MayOS
+</title>
+<style>
+#password {
+background-Image:url(img/bg4.jpg);
+background-size:cover;
+background-position:center;
+width:100vw;
+height:100vh;
+}
+#content {
+background-Image:url(img/bg4.jpg);
+background-size:cover;
+background-position:center;
+width:100vw;
+height:100vh;
+position:fixed;
+} 
+</style>
+</head>
+<body>
+
+<div id="password" style="display:block;" onclick="openFullscreen()">
+<div class="userpass"  >
+<div class="user">
+<center>
+<i class="fa fa-user-circle-o fa-5x" aria-hidden="true"  ></i>
+</center>
+<br>
+
+<center>
+<span id="name" style="font-size:18px; font-weight:900; color:#00d0ff;" ><script>document.getElementById("name").innerHTML=localStorage.getItem('username');</script></span>
+<br>
+<input type="password" placeholder="Password" id="pass" class="mt-1"  value=""  >
+<br>
+<span id="span" style="font-size:18px; font-weight:1000;" ></span>
+<br>
+
+<input type="submit"  onclick="return check()">
+</button>
+</center>
+
+
+</a>
+</center>
+</div>
+</form>
+</div>
+</div>
+<!--script-->
+<!--icon-->
+<div id="content" style="display:none;" onclick="openFullscreen()"  >
+
+<div id="clock"  >
+<div class="clock">
+<div class="container">
+
+        <div class="box">
+            <div class="hours">
+                <h1 id="hours">8</h1>
+            </div>
+
+        </div>
+
+
+        <div class="box">
+            <div class="minutes">
+                <h1 id="minutes">8</h1>
+            </div>
+
+        </div>
+
+
+        <div class="box">
+            <div class="seconds">
+                <h1 id="seconds">8</h1>
+            </div>
+   
+        </div>
+
+        <div class="box">
+            <div class="amorpm">
+                <h1 id="amorpm">8</h1>
+            </div>
+ 
+        </div>
+
+       
+
+</div>
+
+</div>
+</div>
+<!--deskicon-->
+<!--gamepopup-->
+<div id="popup" >
+<div class="popup_parent" >
+<div class="popup_child" >
+<div>
+<button class="popup_close_btn" onclick="closepopup()" >
+<b>
+X</b>
+</button>
+</div>
+
+<center>
+<img src="favicon.ico" class="favicon"  >
+<h2><b>Hextris</b></h2>
+<a href="game.html" >
+<button class="play_btn" >
+PLAY
+</button>
+</a>
+</center>
+</div>
+</div>
+</div>
+<div id="browser" style="display: none;"  >
+<center>
+<embed src="http://www.bing.com/" style="height:98vh; width:98vw; overflow-y:scroll;"  >
+</center>
+</div>
+<!--extra menu-->
+<!--about user-->
+
+<!--setting-->
+
+<div id="setting" >
+<div class="setting_parent" >
+<div class="setting_child" >
+<div>
+<button class="setting_close_btn" onclick="closepopup_setting()" >
+<b>
+X</b>
+</button>
+</div>
+<div id="wallpaper">
+<button class="wallpaper_btn" onclick="showwallpaper()">
+<h3>WallPaper</h3>
+</button>
+<div id="selectwp" >
+
+<button id="btn-1" >
+<img src="img/bg.jpeg" class="wp" onclick="change1()">
+</button>
+<button id="btn-2" >
+<img src="img/bg4.jpg" class="wp" onclick="change2()">
+</button>
+<button id="btn-3" >
+<img src="img/bg5.jpg" class="wp" onclick="change3()">
+</button>
+
+<button id="btn-5" >
+<img src="img/bg1.jpeg" class="wp" onclick="change5()">
+</button>
+<button id="btn-6" >
+<img src="img/bg2.jpeg" class="wp" onclick="change6()">
+</button>
+<button id="btn-7" >
+<img src="img/b3.jpeg" class="wp" onclick="change7()">
+</button>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--games-->
+<div id="mayos_game" style="display: none;"  >
+<div class="mayos_game_parent" >
+<div class="mayos_game_child" >
+<div>
+<button class="mayos_game_close_btn" onclick="closepopup_games()" >
+<b>
+X</b>
+</button>
+</div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Header -->
+<div class="ads" style="z-index:99;"  >
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1760841785290669"
+     data-ad-slot="6187669715"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<p id="note" class=""  >*Please note That these game needs INTERNET Connection </p>
+<h3>MAYOS GAME</h3>
+
+<div class="select" style="display: flex; top:6px; z-index:3;"  >
+<div class="desk col-2" onclick="switch_desktop()" style="font-size:26px; padding-top:4px; color: white;"  ><h1 class="fa fa-desktop" id="desktop"  style="text-shadow: 0 0 8px red, 0 0 8px red, 0 0 10px red, 0 0 8px red; " aria-hidden="true"></h1></div>
+<div class="desk col-2" onclick="switch_mobile()" style="font-size:32px; margin-left:30px; "  ><i class="fa fa-mobile" id="mobile"  aria-hidden="true"></i></div>
+</div>
+<amp-ad width="100vw" height="320"
+     type="adsense"
+     data-ad-client="ca-pub-1760841785290669"
+     data-ad-slot="6187669715"
+     data-auto-format="rspv"
+     data-full-width="">
+  <div overflow=""></div>
+</amp-ad>
+<div id="desk_game" >
+<center>
+
+<a href="https://play.famobi.com/high-hills" ><img src="games/g1.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+<a href="https://play.famobi.com/moto-x3m" ><img src="games/g2.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+<a href="https://play.famobi.com/thug-racer" ><img src="games/g3.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+<a href="https://play.famobi.com/adventure-drivers" ><img src="games/g4.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+<a href="http://hexgl.bkcore.com/play/" ><img src="games/g5.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+</center>
+
+</div>
+
+
+<div id="mobile_game" style="display:none;" >
+<center>
+<a href="https://play.famobi.com/high-hills" ><img src="games/g1.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+<a href="https://play.famobi.com/moto-x3m" ><img src="games/g2.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+<a href="https://play.famobi.com/adventure-drivers" ><img src="games/g4.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+<a href="http://hexgl.bkcore.com/play/" ><img src="games/g5.jpg" class="col-5 col-sm-3 mt-3"   ></a>
+</center>
+</div>
+</div>
+</div>
+</div>
+<!--desptop-->
+<div id="desk_icon" >
+<div class="setting" >
+<a href="http://www.google.com" >
+<button class="google" >
+<i class="fa fa-google" aria-hidden="true"></i>
+</button>
+</a>
+<br>
+<a href="user.html" >
+<button class="google" >
+<i class="fa fa-user-circle-o" aria-hidden="true" onclick="show_about_user()"  ></i>
+</button>
+</a>
+<br>
+<div class="gamepad" onclick="open_mayos_games()">
+<i class="fa fa-gamepad" aria-hidden="true"></i></div>
+</center>
+<div class="google" style="margin-left: 11px;" onclick="show_browser()"  >
+<i class="fa fa-chrome" aria-hidden="true"></i>
+</div>
+<a href="http://www.youtube.com" >
+<button class="yotube" >
+<i class="fa fa-youtube-play" aria-hidden="true"></i>
+</button>
+</a>
+<br>
+<button class="setting_btn" onclick="opensetting()" >
+<i class="fa fa-cog" aria-hidden="true"></i>
+</button>
+<br>
+<img class="game_1" src="favicon.ico"  onclick="showgame()" >
+  
+</div>
+</div>
+<!--calculator-->
+
+<div id="calculator" >
+<div class="calce_parent">
+<div class="calculator-grid">
+<button class="calclose" onclick="closecal()" > X </button>
+  <div class="output">
+    <div data-previous-operand class="previous-operand"></div>
+    <div data-current-operand class="current-operand"></div>
+  </div>
+  <button data-all-clear class="span-two">AC</button>
+  <button data-delete>DEL</button>
+  <button data-operation>÷</button>
+  <button data-number>1</button>
+  <button data-number>2</button>
+  <button data-number>3</button>
+  <button data-operation>*</button>
+  <button data-number>4</button>
+  <button data-number>5</button>
+  <button data-number>6</button>
+  <button data-operation>+</button>
+  <button data-number>7</button>
+  <button data-number>8</button>
+  <button data-number>9</button>
+  <button data-operation>-</button>
+  <button data-number>.</button>
+  <button data-number>0</button>
+  <button data-equals class="span-two">=</button>
+</div>
+</div>
+</div>
+
+<!--game html-->
+
+<!--footer-->
+<footer>
+<div id="footer" >
+<div id="windowmenu" >
+<div class="calce" >
+<button onclick="showcal()" class="calce_btn" ><i class="fa fa-calculator" aria-hidden="true"></i></button>
+</div>
+<div class="logout" >
+<button class="logout_btn" onclick="logout()" ><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+<div class="closemenu" >
+<button class="close_btn" onclick="closemenu()" ><i class="fa fa-times" aria-hidden="true"></i></button>
+</div>
+</div>
+</div>
+<img src="img/icon.png" class="icon" onclick="showmenu()"  >
+<button id="btn" onclick="show_date()" ><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></button>
+
+<!--menu-->
+<div id="menu" onclick="close_date()" >
+<center>
+<div class="dates" > 
+<h1 id="date" >8</h1><h1>/</h1>
+<h1 id="month" >8</h1><h1>/</h1>
+<h1 id="year" >8</h1>
+</div>
+</center>
+</div>
+</footer>
+</div>
+</div>
+</body>
+<script src="js/calce.js"></script>
+<script>
+
+</script>
+</html>

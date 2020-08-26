@@ -1,0 +1,356 @@
+<html>
+
+    	<link rel="stylesheet" href="css/bootstrap.min.css" >
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="theme-color" content="black" >
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"  >
+<style>
+body {
+background:url("IMG/BG.jpeg");
+background-size:cover;
+background-position:center;
+width:100vw;
+height:100vh;
+position:fixed;
+}
+*{
+margin:0;
+padding:0;
+}
+#popup 
+{
+z-index:10;
+position:fixed;
+}
+.popup_parent {
+height:80vh;
+width:100vw;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+.popup_child{
+background:white;
+}
+.popup_close_btn {
+font-style:bold;
+width:55px;
+height:55px;
+color:white;
+background:red;
+float:right;
+font-size:50px;
+outline:none;
+border:none;
+}
+.game_parent {
+height:48vh;
+width:85vw;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+
+.about_parent  {
+height:100vh;
+width:100vw;
+display:flex;
+color:white;
+justify-content:center;
+align-items:center;
+overflow-y:scroll;
+}
+.about_child{
+height:100vh;
+width:100vw;
+background-color:rgba(0,0,0, .9);
+overflow-y:scroll;
+}
+.setting_close_btn {
+font-style:bold;
+width:45px;
+height:45px;
+position:fixed;
+color:white;
+background:red;
+font-size:30px;
+outline:none;
+border:none;
+}
+.setting_head {
+background:white;
+width:100vw;
+}
+.user_logo {
+margin-top:18%;
+color:white;
+}
+#change_uname_p {
+display:none;
+}
+#change_uname {
+display:flex;
+justify-content:center;
+align-items:center;
+margin-left:80px;
+margin-right:80px;
+padding-top:10px;
+padding-bottom:10px;
+background:white;
+}
+
+#input_uname, #input_new_password  {
+width:80%;
+}
+::placeholder{
+text-align:center;
+}
+.change_close_btn  {
+font-style:bold;
+width:30px;
+height:33px;
+color:white;
+background:red;
+font-size:25px;
+outline:none;
+border:none;
+}
+.change_password_c {
+background:white;
+}
+#change_password  {
+display:flex;
+display:none;
+justify-content:center;
+align-items:center;
+margin-left:80px;
+margin-right:80px;
+padding-top:10px;
+padding-bottom:10px;
+
+}
+
+#input_password  {
+width:80%;
+}
+::placeholder{
+text-align:center;
+}
+.change_close_btn  {
+font-style:bold;
+width:30px;
+height:33px;
+color:white;
+background:red;
+font-size:25px;
+outline:none;
+border:none;
+}
+</style>
+<body>
+<div id="about_user" onclick="openFullscreen()" >
+<div class="about_parent" >
+<div class="about_child" >
+<div class="about_head" >
+<button class="setting_close_btn" onclick="closepopup()" >
+<a href="ui.html" style="color:white;"  >
+<b>
+X
+</b>
+</a>
+</button>
+</div>
+<center>
+<div class="user_logo" >
+<i class="fa fa-user-circle-o fa-5x" aria-hidden="true"  ></i>
+<br>
+<br>
+
+<div class="detail" >
+Name: <span style="font-weight:900;"  id="name" >&nbsp;&nbsp;<b></span><script>document.getElementById("name").innerHTML=localStorage.getItem('username');</script></b>&nbsp;&nbsp;<i class="fa fa-pencil-square-o text-success" aria-hidden="true" onclick="change_uname()"></i><br>
+Change Password &nbsp;&nbsp;<i class="fa fa-pencil-square-o text-success" aria-hidden="true" onclick="change_password()"></i>
+<div id="change_uname_p" >
+
+<button class="change_close_btn" onclick="close_change()" >
+<b>
+X
+</b>
+</button>
+<center>
+<div id="change_uname" >
+<div class="change_uname_c" >
+<span id="alert" ></span>
+<input id="input_uname" value="" class="form-control text-center m-1" placeholder="NEW USERNAME"  ><br>
+<script>document.getElementById("input_uname").value=localStorage.getItem('username');</script>
+<input type="submit" class="btn btn-primary"  onclick="localchange()">
+</div>
+</div>
+</div>
+</div>
+<!--password-->
+<div id="change_password" >
+<button class="change_close_btn" onclick="close_change()" >
+<b>
+X
+</b>
+</button>
+<div class="change_password_c" >
+<span id="alert_pass" ></span>
+<br>
+<input id="input_password" value="" class="form-control text-center" placeholder="OLD PASSWORD"  >
+<input id="input_new_password" value="" class="form-control text-center mt-2" placeholder="NEW PASSWORD"  ><br>
+<input type="submit" class="btn btn-primary mb-3"  onclick="return localchange_password()">
+</div>
+</div>
+</div>
+</div>
+<script>
+var elem = document.documentElement;
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+  elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+  elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+  elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+  elem.msRequestFullscreen();}
+}
+function change_uname(){
+	document.getElementById("change_uname_p").style.display= "block";
+
+}
+function change_password(){
+	document.getElementById("change_password").style.display= "block";
+
+}
+function close_change(){
+	document.getElementById("change_uname_p").style.display= "none";
+	document.getElementById("change_password").style.display= "none";
+}
+
+function localchange_password(){
+var pass_value =document.getElementById("input_password").value;
+var new_pass_value =document.getElementById("input_new_password").value;
+
+if(pass_value!=localStorage.getItem("password")){
+alert("Old Password Is Wrong");
+return false;
+}
+
+
+if(new_pass_value==""){
+alert("Please Write Something");
+return false;
+}
+else{
+  localStorage.setItem('password', new_pass_value); 
+  location.replace('ui.html') ;
+  alert("Your Password had changed successfully ")
+  }
+}
+
+
+let input= document.querySelector(('#input_uname'));
+
+input.addEventListener('keyup', (e) => {
+if(e.keyCode === 13){
+var value =	document.getElementById("input_uname").value;
+
+if(value==""){
+alert("Please Write Something");
+}
+else{
+  localStorage.setItem('username', value); 
+  location.replace('user.html') ;
+  }
+
+  }
+});
+function localchange_password(){
+var pass_value =document.getElementById("input_password").value;
+var new_pass_value =document.getElementById("input_new_password").value;
+
+if(pass_value!=localStorage.getItem("password")){
+alert("Old Password Is Wrong");
+return false;
+}
+
+
+if(new_pass_value==""){
+alert("Please Write Something");
+return false;
+}
+else{
+  localStorage.setItem('password', new_pass_value); 
+  location.replace('ui.html') ;
+  alert("Your Password had changed successfully ")
+  }
+}
+
+function localchange(){
+var value =	document.getElementById("input_uname").value;
+
+if(value==""){
+alert("Please Write Something");
+}
+else{
+  localStorage.setItem('username', value); 
+  location.replace('user.html') ;
+  }
+
+  }
+function localchange_password(){
+var pass_value =document.getElementById("input_password").value;
+var new_pass_value =document.getElementById("input_new_password").value;
+
+if(pass_value!=localStorage.getItem("password")){
+alert("Old Password Is Wrong");
+return false;
+}
+
+
+if(new_pass_value==""){
+alert("Please Write Something");
+return false;
+}
+else{
+  localStorage.setItem('password', new_pass_value); 
+  location.replace('ui.html') ;
+  alert("Your Password had changed successfully ")
+  }
+}
+
+let input_password= document.querySelector(('#input_new_password'));
+
+input_password.addEventListener('keyup', (e) => {
+if(e.keyCode === 13){
+
+{
+var pass_value =document.getElementById("input_password").value;
+var new_pass_value =document.getElementById("input_new_password").value;
+
+if(pass_value!=localStorage.getItem("password")){
+alert("Old Password Is Wrong");
+return false;
+}
+
+
+if(new_pass_value==""){
+alert("Please Write Something");
+return false;
+}
+else{
+  localStorage.setItem('password', new_pass_value); 
+  location.replace('ui.html') ;
+  alert("Your Password had changed successfully ")
+  }
+}
+
+}
+}
+);
+</script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"  >
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<meta name="theme-color" content="black" >
+<head>
+<style>
+*{
+margin:0;
+padding:0;
+}
+#password {
+background-Image:url(img/bg4.jpg);
+position:fixed;
+background-size:cover;
+background-position:center;
+width:100vw;
+height:100vh;
+}
+.userpass 
+{
+width:100vw;
+height:80vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+i{
+color:#00d0df;
+text-shadow:4px 6px 4px #015e61;
+font-size:15px;
+border-radius:100%;
+}
+input {
+text-align:center;
+color: #00d0ff;
+border-radius:20px;
+font-size:20px;
+outline-color:#00d0ff;
+border-color:#00d0ff;
+box-shadow:2px 2px 10px #00d0ff;
+margin-top:10px;
+}
+::placeholder{
+text-align:center;
+color: #00d0ff;
+font-size:20px;
+}
+input[type="submit"]{
+text-align:center;
+color: #00d0ff;
+font-size:18px;
+padding-left:6px;
+padding-right:6px;
+border-radius:12px;
+border-color:#00d0ff;
+background:white;
+outline:none;
+box-shadow:2px 2px 10px #00d0ff;
+}
+#msg {
+font-weight:900;
+font-size:18px;
+display:none;
+}
+</style>
+</head>
+<body>
+  <div id="password" style="display:block;" onclick="openFullscreen()">
+  <div class="userpass"  >
+  <div class="user">
+  <center>
+  <i class="fa fa-user-circle-o fa-5x" aria-hidden="true"  ></i>
+  </center>
+  <br>
+  
+  <center>
+  <span id="msg" class="text-danger"  >Confrom Password not Match</span>
+    <input type="text" placeholder="Username" id="username" value=""  >
+    <br>
+  <input type="password" placeholder="Password" id="pass" value=""  >
+  <br>
+  <input type="password" placeholder="Conform Password" id="conform_pass" value=""  ><br>
+  <input type="submit"  onclick="return check()">
+  </button>
+  </center>
+  
+  
+  </a>
+  </center>
+  </div>
+  </div>
+  </div>
+  <script src="js/calce.js"></script>
+  <script type="text/javascript">
+  function check(){
+  var psw = document.getElementById("pass").value;
+  var rpsw = document.getElementById("conform_pass").value;
+  var uname = document.getElementById("username").value;
+  if(uname ==""){
+  document.getElementById("msg").style.display = "block";
+  document.getElementById("msg").innerHTML ="Please Enter Your Username";
+  return false;
+  }
+  if(rpsw!=psw){
+  document.getElementById("msg").style.display = "block";
+  document.getElementById("msg").innerHTML ="Please Check the Password";
+  return false;
+  }
+  if(rpsw ==""){
+  document.getElementById("msg").style.display = "block";
+  document.getElementById("msg").innerHTML ="Please Enter the Password";
+  return false;
+  }
+  else{
+  localStorage.setItem('password', psw);
+  localStorage.setItem('username', uname);  
+  console.log(password);
+  alert(' Welcome to May os');
+  location.replace('ui.html');
+  }
+  }
+  var elem = document.documentElement;
+  function openFullscreen() {
+  if (elem.requestFullscreen) {
+  elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+  elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+  elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+  elem.msRequestFullscreen();}
+  }
+  
+  
+  
+  
+  let conform_password= document.querySelector(('#conform_pass'));
+  
+  conform_password.addEventListener('keyup', (e) => {
+  if(e.keyCode === 13){
+  var psw = document.getElementById("pass").value;
+  var rpsw = document.getElementById("conform_pass").value;
+  var uname = document.getElementById("username").value;
+  if(uname ==""){
+  document.getElementById("msg").style.display = "block";
+  document.getElementById("msg").innerHTML ="Please Enter Your Username";
+  return false;
+  }
+  if(rpsw!=psw){
+  document.getElementById("msg").style.display = "block";
+  document.getElementById("msg").innerHTML ="Please Check the Password";
+  return false;
+  }
+  if(rpsw ==""){
+  document.getElementById("msg").style.display = "block";
+  document.getElementById("msg").innerHTML ="Please Enter the Password";
+  return false;
+  }
+  else{
+  localStorage.setItem('password', psw);
+  localStorage.setItem('username', uname);  
+  console.log(password);
+  alert(' Welcome to May os');
+  location.replace('ui.html');
+  }
+  }
+  });
+  
+  
+  let password= document.querySelector(('#pass'));
+  
+  password.addEventListener('keyup', (e) => {
+  if(e.keyCode === 13){
+  var psw = document.getElementById("pass").value;
+  var rpsw = document.getElementById("conform_pass").value;
+  var uname = document.getElementById("username").value;
+  if(uname ==""){
+  document.getElementById("msg").style.display = "block";
+  document.getElementById("msg").innerHTML ="Please Enter Your Username";
+  return false;
+  }
+  if(rpsw!=psw){
+  document.getElementById("msg").style.display = "block";
+  document.getElementById("msg").innerHTML ="Please Check the Password";
+  return false;
+  }
+  if(rpsw ==""){
+  document.getElementById("msg").style.display = "block";
+  document.getElementById("msg").innerHTML ="Please Enter the Password";
+  return false;
+  }
+  else{
+  localStorage.setItem('password', psw);
+  localStorage.setItem('username', uname);  
+  console.log(password);
+  alert(' Welcome to May os');
+  location.replace('ui.html');
+  }
+  }
+  });
+  
+  
+  let username= document.querySelector(('#username'));
+  
+  username.addEventListener('keyup', (e) => {
+  if(e.keyCode === 13){
+  var psw = document.getElementById("pass").value;
+  var rpsw = document.getElementById("conform_pass").value;
+  var uname = document.getElementById("username").value;
+  if(uname ==""){
+  document.getElementById("msg").style.display = "block";
+  document.getElementById("msg").innerHTML ="Please Enter Your Username";
+  return false;
+  }
+  if(rpsw!=psw){
+  document.getElementById("msg").style.display = "block";
+  document.getElementById("msg").innerHTML ="Please Check the Password";
+  return false;
+  }
+  if(rpsw ==""){
+  document.getElementById("msg").style.display = "block";
+  document.getElementById("msg").innerHTML ="Please Enter the Password";
+  return false;
+  }
+  else{
+  localStorage.setItem('password', psw);
+  localStorage.setItem('username', uname);  
+  console.log(password);
+  alert(' Welcome to May os');
+  location.replace('ui.html');
+  }
+  }
+  });
+  </script>
+</body>
+</html>
