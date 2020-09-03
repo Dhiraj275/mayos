@@ -207,7 +207,7 @@ color:white;
 padding:6px 8px 6px;
 transition:0.6s;
 }
-{
+
 #input_search   {
 transition:0.6s;
 position:fixed;
@@ -242,8 +242,11 @@ animation:fead-in 0.8s 1;
 	function shownotes(){
 	document.getElementById("input_notes").style.display="block";
 	document.getElementById("saved_notes_print").style.top="155px";
-	document.getElementById("input_notes").style.top="116px";		
-	}
+	document.querySelector(".search_icon").style.top="196px";		
+    document.getElementById("input_search").style.top="235px";
+    document.querySelector(".cancle_search").style.top="270px";
+
+    }
 	let savenote= document.querySelector(('#input_notes'));
 	
 	savenote.addEventListener('keyup', (e) => {
@@ -257,10 +260,8 @@ animation:fead-in 0.8s 1;
 	document.querySelector(".search_icon").style.top="160px";
 	document.querySelector("#input_search").style.top="200px";
 	document.querySelector(".cancle_search").style.top="240px";	
-	document.querySelector(".search_icon").style.top="4px";
-	document.querySelector("#input_search").style.top="45px";
-	document.querySelector(".cancle_search").style.top="80px";	
-	}});
+	document.querySelector(".search_icon").style.top="160px";
+	document.querySelector("#input_search").style.top="200px";	}});
 	let isSearch= false;
 	function search(){
 	isSearch= true;
